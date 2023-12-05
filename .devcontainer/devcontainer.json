@@ -1,0 +1,36 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/python",
+  "forwardPorts": [
+    5000
+  ],
+  "portsAttributes": {
+    "5000": {
+      "label": "App",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "ms-python.python"
+      ],
+      "settings": {
+        "keyboard.layout": "de",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          }
+        }
+      }
+    }
+  },
+  "postCreateCommand": "pip install -r requirements.txt",
+  // https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/setting-a-minimum-specification-for-codespace-machines
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb"
+  }
+}
